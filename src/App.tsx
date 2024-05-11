@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Navs from "./components/Navs";
+import CardBase from "./components/CardBase";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Post } from "../types/post";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function App() {
+  const [posts, setPosts] = useState<Post[]>([]);
+  useEffect(() => {
+    axios.get("http://127.0.0.1:5000/api/posts").then((res) => {
+      setPosts(res.data);
+    });
+  }, []);
+  const firstPost = posts.length > 0 ? posts[0] : null;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header>
+        <Navs />
       </header>
-    </div>
+      <main>
+        <div className="container mt-5">
+          <div className="cards">
+          {firstPost && <CardBase post={firstPost} />}
+          </div>
+        </div>
+      </main>
+    </>
   );
 }
 
