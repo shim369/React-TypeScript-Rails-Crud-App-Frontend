@@ -11,6 +11,7 @@ function PostDetail() {
     content: "",
     image_url: "",
   });
+  const defaultImageUrl = "../logo512.png";
 
   useEffect(() => {
     axios.get(`http://127.0.0.1:5000/api/posts/${id}`).then((res) => {
@@ -26,7 +27,12 @@ function PostDetail() {
     <main>
       <div className="container mt-5">
         <h2>{post.title}</h2>
-        <div>{post.image_url}</div>
+        <div>
+            <img
+                src={post.image_url ? post.image_url : defaultImageUrl}
+                alt={post.title}
+            />
+        </div>
         <p>{post.content}</p>
       </div>
     </main>
