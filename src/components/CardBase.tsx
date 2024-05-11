@@ -1,9 +1,10 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { Post } from "../../types/post";
+import { PostTypes } from "../../types/postTypes";
+import { Link } from "react-router-dom";
 
 interface CardProps {
-  post: Post;
+  post: PostTypes;
 }
 
 function CardBase({ post }: CardProps) {
@@ -18,9 +19,11 @@ function CardBase({ post }: CardProps) {
         alt={post.title}
       />
       <Card.Body>
-        <Card.Title>{post.title}</Card.Title>
-        <Card.Text>{post.content}</Card.Text>
-        <Button variant="primary">Detail</Button>
+          <Card.Title>{post.title}</Card.Title>
+          <Card.Text>{post.content}</Card.Text>
+          <Link to={`/posts/${post.id}`}>
+              <Button variant="primary">Detail</Button>
+          </Link>
       </Card.Body>
     </Card>
   );

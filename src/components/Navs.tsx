@@ -4,6 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 
 function Navs() {
   return (
+    <header>
     <Navbar expand="lg" className="bg-body-tertiary shadow">
       <Container>
         <Navbar.Brand href="/">React Rails Crud App</Navbar.Brand>
@@ -16,6 +17,7 @@ function Navs() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    </header>
   );
 }
 
