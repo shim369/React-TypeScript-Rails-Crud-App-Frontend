@@ -27,14 +27,19 @@ function PostDetail() {
   return (
     <main>
       <div className="container mt-5">
-        <h2>{post.title}</h2>
-        <div>
-            <img
+        <div className="row">
+          <div className="col-12 col-md-6 m-auto">
+            <h2>{post.title}</h2>
+            <div>
+              <img
                 src={post.image_url ? post.image_url : defaultImageUrl}
                 alt={post.title}
-            />
+                className="w-100"
+              />
+            </div>
+            <p>{post.content}</p>
+          </div>
         </div>
-        <p>{post.content}</p>
       </div>
     </main>
   );

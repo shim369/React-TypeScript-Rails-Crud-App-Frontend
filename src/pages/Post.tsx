@@ -14,7 +14,7 @@ function Post() {
     <>
       <main>
         <div className="container mt-5">
-          <div className="cards d-flex flex-wrap justify-content-around">
+          <div className="cards row">
             {posts.map((post) => (
               <CardBase key={post.id} post={post} />
             ))}
