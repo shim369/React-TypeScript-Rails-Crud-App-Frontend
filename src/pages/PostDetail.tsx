@@ -10,6 +10,7 @@ function PostDetail() {
     title: "",
     content: "",
     image_url: "",
+    image: null
   });
   const defaultImageUrl = "../logo512.png";
 
