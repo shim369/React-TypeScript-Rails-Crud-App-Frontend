@@ -11,7 +11,7 @@ function CardBase({ post }: CardProps) {
   const defaultImageUrl = "logo512.png";
 
   return (
-    <Card style={{ width: "30%" }}>
+    <Card style={{ width: "30%" }} className="mb-5">
       <Card.Img
         variant="top"
         src={post.image_url ? post.image_url : defaultImageUrl}
