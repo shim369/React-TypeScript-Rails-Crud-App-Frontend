@@ -10,13 +10,14 @@ function Post() {
       setPosts(res.data);
     });
   }, []);
-  const firstPost = posts.length > 0 ? posts[0] : null;
   return (
     <>
       <main>
         <div className="container mt-5">
-          <div className="cards">
-          {firstPost && <CardBase post={firstPost} />}
+          <div className="cards d-flex flex-wrap justify-content-around">
+            {posts.map((post) => (
+              <CardBase key={post.id} post={post} />
+            ))}
           </div>
         </div>
       </main>
