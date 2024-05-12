@@ -12,7 +12,7 @@ function Navs() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/">Link</Nav.Link>
+            <Nav.Link href="/posts/create">Post Create</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
