@@ -20,8 +20,7 @@ function CardBase({ post }: CardProps) {
         alt={post.title}
       />
       <Card.Body>
-          <Card.Title>{post.title}</Card.Title>
-          <Card.Text>{post.content}</Card.Text>
+          <Card.Title className="mb-3">{post.title}</Card.Title>
           <Link to={`/posts/${post.id}`}>
               <Button variant="primary">Detail</Button>
           </Link>
