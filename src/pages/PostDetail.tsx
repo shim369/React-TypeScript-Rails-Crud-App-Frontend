@@ -40,20 +40,38 @@ function PostDetail() {
 
   return (
     <main>
-      <div className="container mt-5">
+      <div className="container my-5">
         <div className="row">
-          <div className="col-12 col-md-6 m-auto">
-            <h2>{post.title}</h2>
-            <div>
-              <img
-                src={post.image_url ? post.image_url : defaultImageUrl}
-                alt={post.title}
-                className="w-100"
-              />
+          <div className="col-12 col-md-8 m-auto">
+            <div className="card">
+              <div className="card-header">
+                  <div>
+                    <Link
+                      to={`/posts/${post.id}/edit`}
+                      className="btn btn-success"
+                    >
+                      Edit
+                    </Link>
+                    <button
+                      className="btn btn-danger ms-1"
+                      onClick={handleDelete}
+                    >
+                      Delete
+                    </button>
+                  </div>
+              </div>
+              <div className="card-body">
+                <h2 className="fs-5 d-flex align-items-center justify-content-between">
+                  {post.title}
+                </h2>
+                <img
+                  src={post.image_url ? post.image_url : defaultImageUrl}
+                  alt={post.title}
+                  className="w-100 h-75"
+                />
+                <p className="mt-2">{post.content}</p>
+              </div>
             </div>
-            <p>{post.content}</p>
-            <Link to={`/posts/${post.id}/edit`} className="btn btn-success">Edit</Link>
-            <button className="btn btn-danger ms-1" onClick={handleDelete}>Delete</button>
           </div>
         </div>
       </div>
