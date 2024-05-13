@@ -65,9 +65,8 @@ function PostEdit() {
     setErrors(errors);
 
     try {
-      const response = await axios.put(
-        `http://127.0.0.1:5000/api/posts/${id}`,
-        data
+      await axios.put(
+        `http://127.0.0.1:5000/api/posts/${id}`, data
       );
       navigate("/");
     } catch (error: any) {
@@ -131,7 +130,7 @@ function PostEdit() {
                 </div>
                 <div className="mb-3">
                   <button type="submit" className="btn btn-primary">
-                    Update Task
+                    Update Post
                   </button>
                 </div>
               </form>
