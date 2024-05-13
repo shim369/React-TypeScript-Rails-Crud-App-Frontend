@@ -12,7 +12,7 @@ function CardBase({ post }: CardProps) {
 
   return (
     <div className="col-md-4 col-sm-6 p-2">
-    <Card className="p-4 h-100">
+    <Card className="p-2 h-100">
       <Card.Img
         variant="top"
         src={post.image_url ? post.image_url : defaultImageUrl}
