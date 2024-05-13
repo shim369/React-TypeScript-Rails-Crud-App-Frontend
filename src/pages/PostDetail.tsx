@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { PostTypes } from "../../types/postTypes";
@@ -29,6 +29,7 @@ function PostDetail() {
       <div className="container mt-5">
         <div className="row">
           <div className="col-12 col-md-6 m-auto">
+          <Link to={`/posts/${post.id}/edit`}>Edit</Link>
             <h2>{post.title}</h2>
             <div>
               <img
