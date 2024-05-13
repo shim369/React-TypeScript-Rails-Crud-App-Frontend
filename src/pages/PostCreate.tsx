@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 function PostCreate() {
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     const [errors, setErrors] = useState<string[]>([])
     const [post, setPost] = useState<PostTypes>({
         id: 0,
@@ -55,7 +55,7 @@ function PostCreate() {
                     'Content-Type': 'multipart/form-data',
                 },
             });
-            // navigate('/')
+            navigate('/')
         } catch (error: any) {
             errors.push(error.response);
         }
